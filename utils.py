@@ -34,10 +34,3 @@ def get_protocol(packet):
         return "UDP"
     else:
         return "Other"
-
-def list_interfaces():
-    """Выводит список доступных сетевых интерфейсов"""
-    interfaces = get_if_list()
-    print("Available network interfaces:")
-    for interface in interfaces:
-        print(f" - {interface}")
