@@ -1,10 +1,14 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '')))
+
 import unittest
 from unittest.mock import patch, MagicMock
 from sniffer import packet_callback
-from scapy.all import IP
+from scapy.layers.inet import IP
 
 class TestSniffer(unittest.TestCase):
-    @patch('Sniffer.sniffer.time.strftime', return_value='2025-03-26 06:29:05')
+    @patch('sniffer.time.strftime', return_value='2025-03-26 06:29:05')
     def test_packet_callback_tcp(self, mock_time):
         packet = MagicMock()
         packet.haslayer.return_value = True
@@ -21,7 +25,7 @@ class TestSniffer(unittest.TestCase):
                 print(f"Actual calls for TCP: {mock_print.mock_calls}")
                 raise e
 
-    @patch('Sniffer.sniffer.time.strftime', return_value='2025-03-26 06:29:05')
+    @patch('sniffer.time.strftime', return_value='2025-03-26 06:29:05')
     def test_packet_callback_udp(self, mock_time):
         packet = MagicMock()
         packet.haslayer.return_value = True
