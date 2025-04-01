@@ -1,4 +1,4 @@
-from utils import parse_arguments, list_interfaces
+from utils import parse_arguments
 from sniffer import start_sniffer
 
 if __name__ == "__main__":
