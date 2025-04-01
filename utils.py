@@ -1,5 +1,8 @@
 import argparse
-from scapy.all import TCP, UDP, ICMP, ARP, DNS, IP, get_if_list
+from scapy.layers.inet import TCP, UDP, ICMP
+from scapy.layers.l2 import ARP
+from scapy.layers.dns import DNS
+from scapy.all import get_if_list
 
 def parse_arguments():
     """Парсит аргументы командной строки"""

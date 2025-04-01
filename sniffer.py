@@ -1,6 +1,7 @@
 import time
 import sys
-from scapy.all import sniff, IP, TCP, UDP, ICMP
+from scapy.all import sniff
+from scapy.layers.inet import IP
 from utils import get_protocol
 
 def packet_callback(packet):
